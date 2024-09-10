@@ -5,5 +5,5 @@ from cicd import urls as you
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cicd/hey/', include(you)),
+    path('cicd/', include(you)),
 ]

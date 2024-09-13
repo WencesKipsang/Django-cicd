@@ -4,6 +4,6 @@ from django.urls import path, include
 from cicd import urls as you
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('cicd/', include(you)),
+    path('frs-jenkins2/admin/', admin.site.urls),
+    path('frs-jenkins2/cicd/', include(you)),
 ]

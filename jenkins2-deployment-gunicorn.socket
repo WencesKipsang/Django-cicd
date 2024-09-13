@@ -1,5 +1,5 @@
 [Unit]
-Description=jenkins-deployment-gunicorn socket
+Description=jenkins2-deployment-gunicorn socket
 
 [Socket]
 ListenStream=/run/jenkins2-deployment-gunicorn.sock

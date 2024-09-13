@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                         dir('/root/frs_cicd/CICD2') {
-                            git branch: 'main', url: 'https://github.com/WencesKipsang/Django_Jenkinsfile-deployment.git' 
+                            git branch: 'main', url: 'https://github.com/WencesKipsang/Django-cicd.git' 
                         }                     
                 }              
 

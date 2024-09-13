@@ -6,14 +6,18 @@ pipeline {
             steps {
                 script {
                     dir('/root/frs_cicd') {
-                        sh 'mkdir CICD2'
-                        sh 'python3 -m venv CICD2Env'
+                        if (!fileExists('CICD2')) {
+                            sh 'mkdir CICD2'
+                        }
+                        if (!fileExists('CICD2Env')) {
+                            sh 'python3 -m venv CICD2Env'
+                        }                       
                     } 
                 }              
 
             }
         }
-        
+
         stage('Checkout') {
             steps {
                 script {
@@ -46,12 +50,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "seting up gunicorn"
-                dir('/root/frs_cicd/CICD2') {
+                script {
+                    dir('/root/frs_cicd/CICD2') {
                     sh '''
-                    chmod +x gunicorn.sh
+                    chmod +x  gunicorn.sh
                     ./gunicorn.sh
-                    '''
-                    
+                    '''                    
+                    }
                 }
             }
         }

@@ -13,6 +13,6 @@ sudo systemctl start jenkins2-deployment-gunicorn.service
 sudo systemctl enable jenkins2-deployment-gunicorn.service
 
 sudo systemctl daemon-reload
-
+sudo systemctl restart jenkins2-deployment-gunicorn.socket
 sudo systemctl restart jenkins2-deployment-gunicorn.service
 sudo systemctl status jenkins2-deployment-gunicorn.service

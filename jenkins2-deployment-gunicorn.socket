@@ -2,7 +2,7 @@
 Description=jenkins-deployment-gunicorn socket
 
 [Socket]
-ListenStream=/run/jenkins-deployment-gunicorn.sock
+ListenStream=/run/jenkins2-deployment-gunicorn.sock
 # Our service won't need permissions for the socket, since it
 # inherits the file descriptor by socket activation
 # only the nginx daemon will need access to the socket
